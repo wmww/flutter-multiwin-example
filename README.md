@@ -1,16 +1,5 @@
-# multiwindow
+# multiwindow example
 
-A new Flutter project.
+__This project is only compatible with an unmerged WIP version of the flutter framework/engine, and may quickly become out of date__
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Code demonstrating WIP multiwindow capabilities of flutter. You need to use a custom engine built [this branch](https://github.com/wmww/flutter_engine/tree/sophie-multiwindow) and a custom version of the framework built from [this commit](https://github.com/goderbauer/flutter/commit/4c09d4ce87c7e7af5a41c78b6da1bb9e80011d17) from [this branch](https://github.com/goderbauer/flutter/tree/multiview2). The code here is copied from [this repo](https://github.com/goderbauer/scratchpad/tree/main/custom_embedding). Works (somewhat) with Linux and Mac.
