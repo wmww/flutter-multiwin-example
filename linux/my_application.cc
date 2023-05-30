@@ -1,6 +1,7 @@
 #include "my_application.h"
 
 #include <flutter_linux/flutter_linux.h>
+#include <gtk-layer-shell.h>
 #ifdef GDK_WINDOWING_X11
 #include <gdk/gdkx.h>
 #endif
@@ -46,6 +47,15 @@ static void my_application_activate(GApplication* application) {
   } else {
     gtk_window_set_title(window, "multiwindow");
   }
+
+  gtk_layer_init_for_window(window);
+  gtk_layer_set_anchor(window, GTK_LAYER_SHELL_EDGE_LEFT, TRUE);
+  gtk_layer_set_anchor(window, GTK_LAYER_SHELL_EDGE_RIGHT, TRUE);
+  gtk_layer_set_anchor(window, GTK_LAYER_SHELL_EDGE_BOTTOM, TRUE);
+  gtk_layer_auto_exclusive_zone_enable(window);
+  // This is required as of gtk-layer-shell v0.8.1, but future releases shouldn't need it
+  // See https://github.com/wmww/gtk-layer-shell/pull/166 for details
+  gtk_widget_set_size_request(GTK_WIDGET(window), 200, 200);
 
   gtk_window_set_default_size(window, 1280, 720);
   gtk_widget_show(GTK_WIDGET(window));
